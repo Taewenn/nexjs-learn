@@ -5,16 +5,8 @@ import { lusitana } from "@/app/ui/fonts";
 import { Suspense } from "react";
 import { CardsSkeleton, RevenueChartSkeleton } from "@/app/ui/skeletons";
 import { LatestInvoicesSkeleton } from "@/app/ui/skeletons";
-import { fetchLatestInvoices, fetchCardData } from "../../lib/data";
 
 export default async function Page() {
-    const {
-        totalPaidInvoices,
-        totalPendingInvoices,
-        numberOfInvoices,
-        numberOfCustomers,
-    } = await fetchCardData();
-
     return (
         <main>
             <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
